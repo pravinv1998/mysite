@@ -1,0 +1,21 @@
+{% extends 'task/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+this is an home page<br>
+
+<ul>
+{% for task in task %}
+
+<li> {{task}} </li>
+ {% empty %}
+ <li>no tasks</li>
+{% endfor %}
+</ul>
+
+<a href=" {% url 'add' %} ">Add a new task</a>
+
+{% endblock body %}
